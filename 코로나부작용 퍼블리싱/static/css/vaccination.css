@@ -1,0 +1,84 @@
+﻿/* 접종현황 시작 */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    height: 120px;
+}
+
+.bodyLine {
+    display: flex;
+    flex-direction: column;
+    width:50%;
+    padding: 0 60px;
+}
+
+.body {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.chartWrapper {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.chartWrapper2 {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.chartWrapper3 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.help {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid black;
+    margin: 40px 0;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding: 8px 6px;
+}
+
+tr:first-child {
+    background: rgb(241, 241, 241);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+tr:not(tr:first-child, tr:last-child) {
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+/* 접종현황 끝 */

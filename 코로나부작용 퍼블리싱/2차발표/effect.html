@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+<head>
+<meta name = "viewpoint" content = "width=device-width, initial-scale=1.0">
+<title> 접종현황 </title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+<link rel = "stylesheet" type = "text/css" href="style.css">
+<link rel="stylesheet" href="./vaccination.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+</head>
+<body>
+    <div class = "navigation">
+        <ul>
+            <li>
+                <a href ='sidebar.html'>
+                    <span class = "icon"><i class="fas fa-home fa-2x"></i></i> </span>
+                    <span class = "title">메인</span>
+                </a>
+            </li>
+            <li>
+                <a href ='shot.html'>
+                    <span class = "icon"><i class="fas fa-syringe fa-2x"></i> </span>
+                    <span class = "title">접종현황</span>
+                </a>
+            </li>
+            <li>
+                <a href ='effect.html'>
+                    <span class = "icon"> <i class="fas fa-procedures fa-2x"></i> </span>
+                    <span class = "title">부작용현황</span>
+                </a>
+            </li>
+            <li>
+                <a href ='survey.html'>
+                    <span class = "icon"> <i class="far fa-sticky-note fa-2x"></i></span>
+                    <span class = "title">설문조사</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <header></header>
+    <div style="display: flex; width: 100%;">
+
+        <div class="bodyLine">
+            <div style="width: 50%">
+                <form>
+                    <div class = "covid-left2"> </div>
+                    <h3>조건별 부작용현황 조회</h3><br>
+                    <h4>&nbsp;성별</h4>
+                    <input type="radio" id="M" name="M">
+                    <label for="html">남자</label>
+                    <input type="radio" id="F" name="F">
+                    <label for="html">여자</label><br>
+                </form>
+                <form>
+                    <h4>&nbsp;연령대</h4>
+                    <input type="radio" id="10~20" name="10~20">
+                    <label for="html">10~20대</label>
+
+                    <input type="radio" id="30~40" name="30~40">
+                    <label for="html">30~40대</label>
+
+                    &nbsp; <input type="radio" id="50~60" name="50~60">
+                    <label for="html">50~60대</label>
+
+                    &nbsp; <input type="radio" id="70~" name="70~">
+                    <label for="html">70이상</label><br>
+
+                </form>
+                <form>
+                    <h4>&nbsp;기저질환</h4>
+                    <input type="radio" id="yes" name="yes">
+                    <label for="html">있다</label>
+                    <input type="radio" id="no" name="no">
+                    <label for="css">없다</label><br>
+                </form>
+                <form>
+                    <h4>&nbsp;맞은백신종류</h4>&nbsp;
+                    <input type="radio" id="moderna" name="moderna">
+                    <label for="html">모더나&nbsp;</label>
+                    <input type="radio" id="hwaiza" name="hwaiza">
+                    <label for="html">화이자&nbsp;</label>
+                    <input type="radio" id="astrazeneca" name="astrazenaca">
+                    <label for="html">아스트라제네카&nbsp;</label>
+                    <input type="radio" id="yansen" name="yansen">
+                    <label for="html">얀센</label>
+                    &nbsp;&nbsp;&nbsp;
+                    <button class="button button1">제 출</button>
+                </form>
+            </div>
+            <div class="chartWrapper3" style="padding-left: 100px;">
+                <canvas id="chart2"></canvas>
+                <div class="help">
+                    <table id="table2">
+                        <tr>
+                            <td><input type="checkbox" onchange="onChange(event, -1)"></td>
+                            <td>응답</td>
+                            <td style="text-align: right;">응답수</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+        </div> 
+        <div class="bodyLine">
+                <div class="chartWrapper3">
+                    <canvas id="chart1" style="width: 90%"></canvas>
+                </div>
+                <div class="chartWrapper3">
+                    <canvas id="chart3" style="width: 90%" width="756"></canvas>
+                </div>
+        </div>
+    </div>
+    <script src="./effect.js"></script>
+
+    <!--
+    <form>
+        <div class = "covid-left"> </div>
+        <h3>같은부류 검색해보기</h3><br>
+            <input type="radio" id="M" name="M">
+            <label for="html">남자</label>
+            <input type="radio" id="F" name="F">
+            <label for="html">여자</label><br>
+        </form>
+        <form>
+            <input type="radio" id="10~20" name="10~20">
+            <label for="html">10~20대</label>
+
+            <input type="radio" id="30~40" name="30~40">
+            <label for="html">30~40대</label>
+
+            &nbsp; <input type="radio" id="50~60" name="50~60">
+            <label for="html">50~60대</label>
+
+            &nbsp; <input type="radio" id="70~" name="70~">
+            <label for="html">70이상</label><br>
+
+        </form>
+        <form>
+            <input type="radio" id="yes" name="yes">
+            <label for="html">있다.</label>
+            <input type="radio" id="no" name="no">
+            <label for="css">없다.</label><br>
+        </form>
+        <form>
+            <input type="checkbox" id="moderna" name="moderna">
+            <label for="html">모더나</label>
+            <input type="checkbox" id="hwaiza" name="hwaiza">
+            <label for="html">화이자</label>
+            <input type="checkbox" id="astrazeneca" name="astrazenaca">
+            <label for="html">아스트라제네카</label>
+            <input type="checkbox" id="yansen" name="yansen">
+            <label for="html">얀센</label>
+            <input type="checkbox" id="##" name="##">
+            <label for="html">기타</label>
+            <input type="text" placeholder="2차 접종한 백신종류" >
+        </form>
+-->
+
+
+</body>
+</html>
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
+<head>
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title> 접종현황 </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/vaccination.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    {%block extraheads%}{%endblock%}
+</head>
+
+<body>
+    <div class="navigation">
+        <ul>
+            <li>
+                <a href='/main'>
+                    <span class="icon"><i class="fas fa-home fa-2x"></i></i> </span>
+                    <span class="title">메인</span>
+                </a>
+            </li>
+            <li>
+                <a href='/vaccination'>
+                    <span class="icon"><i class="fas fa-syringe fa-2x"></i> </span>
+                    <span class="title">접종현황</span>
+                </a>
+            </li>
+            <li>
+                <a href='/effect'>
+                    <span class="icon"> <i class="fas fa-procedures fa-2x"></i> </span>
+                    <span class="title">부작용현황</span>
+                </a>
+            </li>
+            <li>
+                <a href='/survey'>
+                    <span class="icon"> <i class="far fa-sticky-note fa-2x"></i></span>
+                    <span class="title">설문조사</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    {%block contents%} {%endblock%} 
+    <script src="/static/js/functions.js"></script>
+    {%block extrascripts%} {%endblock%}
+</body>
+
+</html>

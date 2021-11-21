@@ -1,0 +1,96 @@
+﻿{% extends 'base.html' %} 
+
+{%block contents%}
+
+<meta id="Data" data-side_effect_status="{{side_effect_status}}">
+
+<div style="display: flex; width: 100%">
+    <div class="bodyLine">
+        <div style="width: 50%">
+            
+            
+            <form action="" method='get'>
+
+                {# {% csrf_token %} #}
+
+                <!-- 성별 -->
+                <span>성별* </span><br>
+                <label>남자</label>
+                <input type="checkbox" name="gender[]" value="M" /><br>
+                <label>여자</label>
+                <input type="checkbox" name="gender[]" value="F" /><br>
+
+                <br>
+
+                <!-- 연령대 -->
+                <span>연령대* </span> <br>
+                <input type="checkbox" name="age[]" value="10~20" />
+                <label>10~20대</label>
+                <input type="checkbox" name="age[]" value="30~40" />
+                <label>30~40대</label><br>
+                <input type="checkbox" name="age[]" value="50~60" />
+                <label>50~60대</label><br>
+                <input type="checkbox" name="age[]" value="70~" />
+                <label>70이상</label><br>
+
+                <br>
+
+                <!-- 기저질환 -->
+                <span>기저질환이 있습니까?*</span><br>
+                <input type="radio" name="underlying[]" value="true" />
+                <label>있다.</label><br>
+                <input type="radio" name="underlying[]" value="false" />
+                <label>없다.</label><br>
+
+                <br>
+
+                <!-- 1차접종 백신 -->
+                <span>4. 접종 백신 종류* </span><br>
+                <input type="radio" name="vaccine_name[]" value="Moderna" />
+                <label>모더나</label><br>
+                <input type="radio" name="vaccine_name[]" value="pfizer" />
+                <label>화이자</label><br>
+                <input type="radio" name="vaccine_name[]" value="AstraZeneca" />
+                <label>아스트라제네카</label><br>
+                <input type="radio" name="vaccine_name[]" value="Janssen" />
+                <label>얀센</label><br>
+                <input type="radio" name="vaccine_name[]" value="etc" />
+                <label>기타</label>
+                <input type="text" name="vaccine_name[]" placeholder="직접 입력" /><br>
+
+                <br>
+
+                <!-- 제출 버튼 -->
+                <input type="submit" value="조회" style="width:430px;">
+                <br><br><br><br><br>
+            </form>
+
+        </div>
+        <div class="chartWrapper3" style="padding-left: 100px">
+            <canvas id="chart1"></canvas>
+            <div class="help">
+                <table id="table1">
+                    <tr>
+                        <td><input type="checkbox" onchange="change(event, -1)" /></td>
+                        <td>응답</td>
+                        <td style="text-align: right">응답수</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="bodyLine">
+        <div class="chartWrapper3">
+            <canvas id="chart2" style="width: 90%"></canvas>
+        </div>
+        <div class="chartWrapper3">
+            <canvas id="chart3" style="width: 90%" width="756"></canvas>
+        </div>
+    </div>
+</div>
+{%endblock%} 
+
+{%block extrascripts%}
+<script src="/static/js/effect.js"></script>
+{%endblock%}

@@ -1,0 +1,146 @@
+﻿{% extends 'base.html' %}
+
+{% block extraheads %}
+<style>
+    .button {
+        border: none;
+        color: white;
+        padding: 12px 28px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .button1 {
+        background-color: green;
+        color: white;
+        border: 4px solid #4caf50;
+    }
+
+    .button1:hover {
+        background-color: #4caf50;
+        color: white;
+    }
+</style>
+{% endblock %}
+
+{% block contents %}
+
+<div class="covid-left"></div>
+<main>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <h1>코로나 백신 접종 후 부작용 설문조사</h1>
+                <h4>'*'는 필수항목 입니다.</h4>
+            </div>
+        </nav>
+    </div>
+
+    <form action="/create/" method='post'>
+
+        {% csrf_token %}
+
+        <!-- 성별 -->
+        <span>1. 성별* </span><br>
+        <label>남자</label>
+        <input type="radio" name="gender" value="M" /><br>
+        <label>여자</label>
+        <input type="radio" name="gender" value="F" /><br>
+
+        <br>
+
+        <!-- 연령대 -->
+        <span>2. 연령대* </span> <br>
+        <input type="radio" name="age" value="10~20" />
+        <label>10~20대</label>
+        <input type="radio" name="age" value="30~40" />
+        <label>30~40대</label><br>
+        <input type="radio" name="age" value="50~60" />
+        <label>50~60대</label><br>
+        <input type="radio" name="age" value="70~"/>
+        <label>70이상</label><br>
+
+        <br>
+
+        <!-- 기저질환 -->
+        <span>3. 기저질환이 있습니까?*</span><br>
+        <input type="radio" name="underlying" value="true" />
+        <label>있다.</label><br>
+        <input type="radio" name="underlying" value="false" />
+        <label>없다.</label><br>
+
+        <br>
+
+        <!-- 1차접종 백신 -->
+        <span>4. 1차접종 백신 종류* </span><br>
+        <input type="radio" name="vaccine_name_1" value="Moderna" />
+        <label>모더나</label><br>
+        <input type="radio" name="vaccine_name_1" value="pfizer" />
+        <label>화이자</label><br>
+        <input type="radio" name="vaccine_name_1" value="AstraZeneca" />
+        <label>아스트라제네카</label><br>
+        <input type="radio" name="vaccine_name_1" value="Janssen" />
+        <label>얀센</label><br>
+        <input type="radio" name="vaccine_name_1" value="etc" />
+        <label>기타</label>
+        <input type="text" name="vaccine_name_1_etc" placeholder="직접 입력"/><br>
+
+        <br>
+
+        <!-- 2차접종 백신 -->
+        <span>5. 2차접종 백신 종류* </span><br>
+        <input type="radio" name="vaccine_name_2" value="Moderna" />
+        <label>모더나</label><br>
+        <input type="radio" name="vaccine_name_2" value="pfizer" />
+        <label>화이자</label><br>
+        <input type="radio" name="vaccine_name_2" value="AstraZeneca" />
+        <label>아스트라제네카</label><br>
+        <input type="radio" name="vaccine_name_2" value="Janssen" />
+        <label>얀센</label><br>
+        <input type="radio" name="vaccine_name_2" value="Moderna" />
+        <label>기타</label>
+        <input type="text" name="vaccine_name_2_etc" placeholder="직접 입력" /><br>
+
+        <br>
+
+        <!-- 1차접종 부작용 -->
+        <h3>1차접종 후 부작용</h3>
+        <h5>겪은 부작용을 체크해주세요. 기타에는 방광염, 실신, 심장 두근거림 등의 증상이나 또 다른 증상을 겪으신분들은 자세히 서술해주시면 감사하겠습니다.</h5>
+
+        {% for side_effect in side_effect_list %}
+        <input type="checkbox" name="side_effect_1[]" value={{ side_effect.id }} />
+        <label>{{side_effect.side_effect_name}}</label><br>
+        {% endfor %}
+        <input type="checkbox" name="side_effect_1[]" value="etc" />
+        <label>기타</label>
+        <input type="text" name="side_effect_1_etc" placeholder="그 외의 부작용" /><br>
+
+        <br>
+
+        <!-- 2차접종 부작용 -->
+        <h3>2차접종 후 부작용</h3>
+        <h5>겪은 부작용을 체크해주세요. 기타에는 방광염, 실신, 심장 두근거림 등의 증상이나 또 다른 증상을 겪으신분들은 자세히 서술해주시면 감사하겠습니다.</h5>
+
+        {% for side_effect in side_effect_list %}
+        <input type="checkbox" name="side_effect_2[]" value={{ side_effect.id }} />
+        <label>{{side_effect.side_effect_name}}</label><br>
+        {% endfor %}
+
+        <input type="checkbox" name="side_effect_2[]" value="etc" />
+        <label for="email">기타</label>
+        <input type="text" name="side_effect_2_etc" placeholder="그 외의 부작용" />
+
+        <br>
+
+        <!-- 제출 버튼 -->
+        <input type="submit" value="제출" style="width:430px;">
+        <br><br><br><br><br>
+    </form>
+
+</main>
+{%endblock%}

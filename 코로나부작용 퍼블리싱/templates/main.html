@@ -1,0 +1,62 @@
+﻿{% extends 'base.html' %} 
+
+{%block contents%}
+
+<meta id="Data" data-vaccine_list="{{vaccine_list}}">
+
+<main>
+    <p>&nbsp;</p>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">코로나19 백신접종 부작용 현황 서비스</div>
+        </nav>
+    </div>
+    <div class="body">
+        <div class="chartWrapper">
+            <canvas id="chart1"></canvas>
+            <div class="help">
+                <table id="table1">
+                    <tr>
+                        <td><input type="checkbox" onchange="change(event, -1)" checked /></td>
+                        <td>응답</td>
+                        <td style="text-align: right">응답수</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="section">
+            <input type="radio" name="slide" id="slide01" checked />
+            <input type="radio" name="slide" id="slide02" />
+            <input type="radio" name="slide" id="slide03" />
+            <div class="slidewrap">
+                <ul class="slidelist">
+                    <li>
+                        <a>
+                            <label for="slide03" class="left"></label>
+                            <img src="/static/img/news1.png" />
+                            <label for="slide02" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide01" class="left"></label>
+                            <img src="/static/img/news2.png" />
+                            <label for="slide03" class="right"></label>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <label for="slide02" class="left"></label>
+                            <img src="/static/img/news3.png" />
+                            <label for="slide01" class="right"></label>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+{%endblock%} {%block extrascripts %}
+<script src="/static/js/main.js"></script>
+{%endblock%}

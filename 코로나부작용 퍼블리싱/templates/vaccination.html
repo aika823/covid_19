@@ -1,0 +1,88 @@
+﻿{% extends 'base.html' %} 
+
+{%block contents%}
+
+<meta id="Data" 
+    data-vaccine_list_times="{{vaccine_list_times}}"
+    data-vaccine_list_age="{{vaccine_list_age}}"
+    data-vaccine_list_gender="{{vaccine_list_gender}}"
+    data-vaccine_list_underlying="{{vaccine_list_underlying}}"
+    data-vaccine_list_type="{{vaccine_list_type}}"
+>
+
+<div style="display: flex">
+    <div class="body">
+        <header></header>
+        <div class="chartWrapper">
+            <canvas id="chart1"></canvas>
+            <div class="help">
+                <table id="table1">
+                    <tr>
+                        <td><input type="checkbox" onchange="change(event, -1)" checked /></td>
+                        <td>응답</td>
+                        <td style="text-align: right">응답수</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="chartWrapper">
+            <canvas id="chart2"></canvas>
+            <div class="help">
+                <table id="table2">
+                    <tr>
+                        <td><input type="checkbox" onchange="change(event, -1)" checked /></td>
+                        <td>응답</td>
+                        <td style="text-align: right">응답수</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="chartWrapper">
+            <canvas id="chart3"></canvas>
+            <div class="help">
+                <table id="table3">
+                    <tr>
+                        <td><input type="checkbox" onchange="change(event, -1)" checked /></td>
+                        <td>응답</td>
+                        <td style="text-align: right">응답수</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="chartWrapper">
+            <canvas id="chart4"></canvas>
+            <div class="help">
+                <table id="table4">
+                    <tr>
+                        <td><input type="checkbox" onchange="change(event, -1)" checked /></td>
+                        <td>응답</td>
+                        <td style="text-align: right">응답수</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="chartWrapper">
+            <canvas id="chart5"></canvas>
+            <div class="help">
+                <table id="table5">
+                    <tr>
+                        <td><input type="checkbox" onchange="change(event, -1)" checked /></td>
+                        <td>응답</td>
+                        <td style="text-align: right">응답수</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+{%endblock%} {%block extrascripts%}
+<script src="/static/js/vaccination.js"></script>
+{%endblock%}

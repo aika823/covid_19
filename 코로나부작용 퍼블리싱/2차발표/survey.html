@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+<head>
+<meta name = "viewpoint" content = "width=device-width, initial-scale=1.0">
+<title>	Sidebar Menu </title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+<link rel = "stylesheet" type = "text/css" href="style.css">
+</head>
+<body>
+	<div class = "navigation">
+		<ul>
+			<li>
+				<a href ='sidebar.html'>
+					<span class = "icon"><i class="fas fa-home fa-2x"></i></i> </span>
+					<span class = "title">메인</span>
+				</a>
+			</li>
+			<li>
+				<a href ='shot.html'>
+					<span class = "icon"><i class="fas fa-syringe fa-2x"></i> </span>
+					<span class = "title">접종현황</span>
+				</a>
+			</li>
+			<li>
+				<a href ='effect.html'>
+					<span class = "icon"> <i class="fas fa-procedures fa-2x"></i> </span>
+					<span class = "title">부작용현황</span>
+				</a>
+			</li>
+			<li>
+				<a href ='survey.html'>
+					<span class = "icon"> <i class="far fa-sticky-note fa-2x"></i></span>
+					<span class = "title">설문조사</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+		<div class = "covid-left"> </div>
+
+	<main>
+		<p>&nbsp;</p>
+		<div class="container-fluid">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<div class="container-fluid">
+					<h1>코로나 백신 접종 후 부작용 설문조사</h1>
+					<h4>'*'는 필수항목 입니다.</h4><br><hr>
+                </div>
+            </nav>
+        </div>
+		<div title>
+			<p>&nbsp;</p>
+			<span>1. 성별* </span>
+			
+		</div><br>
+			
+		<form>
+  			<input type="radio" id="male" name="gender">
+  			<label for="html">남자</label><br>
+  			<input type="radio" id="female" name="gender">
+  			<label for="html">여자</label><br>
+  		</form>
+		<div title>
+			<p></p>
+			<span>2. 연령대* </span>
+			
+		</div><br>
+		<form>
+  			<input type="radio" id="10-20" name="age">
+  			<label for="html">10~20대</label><br>
+
+  			<input type="radio" id="30-40" name="age">
+  			<label for="html">30~40대</label><br>
+
+			&nbsp; <input type="radio" id="50-60" name="age">
+  			<label for="html">50~60대</label><br>
+
+			&nbsp; <input type="radio" id="70-" name="age">
+  			<label for="html">70이상</label><br>
+
+  		</form>
+		<div title>
+			<p>&nbsp;</p>
+			<span>3. 기저질환이 있습니까?* </span>
+			
+		</div><br>
+			
+		<form>
+  			<input type="radio" id="yes" name="disease">
+  			<label for="html">있다.</label><br>
+  			<input type="radio" id="no" name="disease">
+  			<label for="css">없다.</label><br>
+  		</form>
+		<div title>
+			<p>&nbsp;</p>
+			<span>4. 맞은 백신 종류* </span><br>
+			<h5>교차접종을 하신 분은 기타란에 2차접종한 백신종류를 기입해주세요.</h5>
+			
+		</div><br>
+		<form>
+			<input type="checkbox" >
+			<label for="html">모더나</label><br>
+			<input type="checkbox" >
+			<label for="html">화이자</label><br>
+			<input type="checkbox" >
+			<label for="html">아스트라제네카</label><br>
+			<input type="checkbox" >
+			<label for="html">얀센</label><br>
+			<input type="checkbox" >
+			<label for="html">기타</label>
+    		<input type="text" placeholder="2차 접종한 백신종류" >
+		</form>
+		<br><hr>
+		<div title>
+			<p>&nbsp;</p>
+			<h3>1차접종 후 부작용</h3>
+			<h5>겪은 부작용을 체크해주세요. 기타에는 방광염, 실신, 심장 두근거림 등의 증상이나 또 다른 증상을 겪으신분들은 자세히 서술해주시면 감사하겠습니다.</h5>
+			
+		</div><br>
+		<form>
+			<input type="checkbox" id="1-A" name="1-A">
+			<label for="html">접종 부위 통증 및 붓기 </label><br>
+			<input type="checkbox" id="1-D" name="1-D">
+			<label for="html">피로감 및 권태감 </label><br>
+			<input type="checkbox" id="1-C" name="1-C">
+			<label for="html">근육통 </label><br>
+			<input type="checkbox" id="1-B" name="1-B">
+			<label for="html">두통 </label><br>
+			<input type="checkbox" id="1-J" name="1-J">
+			<label for="html">발열 및 오한 </label><br>
+			<input type="checkbox" id="1-K" name="1-K">
+			<label for="html">복통 및 구토 </label><br>
+			<input type="checkbox" id="1-N" name="1-N">
+			<label for="html">호흡곤란 </label><br>
+			<input type="checkbox" id="1-G" name="1-G">
+			<label for="html">생리불순 및 하혈 </label><br>
+			<input type="checkbox" id="1-M" name="1-M">
+			<label for="html">심근염 및 심낭염 </label><br>
+			<input type="checkbox" id="##" name="##">
+			<label for="email">기타</label>
+    		<input type="text" placeholder="그 외의 부작용" name="email" id="email" required>
+		</form>
+		<div title>
+			<p>&nbsp;</p>			
+			<h3>2차접종 후 부작용</h3>
+			<h5>겪은 부작용을 체크해주세요. 기타에는 방광염, 실신, 심장 두근거림 등의 증상이나 또 다른 증상을 겪으신분들은 자세히 서술해주시면 감사하겠습니다.</h5>
+			
+		</div><br>
+		<form>
+			<input type="checkbox" id="##" name="##" >
+			<label for="html">2차 미접종 </label><br>
+			<input type="checkbox" id="1-A" name="1-A">
+			<label for="html">접종 부위 통증 및 붓기 </label><br>
+			<input type="checkbox" id="1-D" name="1-D">
+			<label for="html">피로감 및 권태감 </label><br>
+			<input type="checkbox" id="1-C" name="1-C">
+			<label for="html">근육통 </label><br>
+			<input type="checkbox" id="1-B" name="1-B">
+			<label for="html">두통 </label><br>
+			<input type="checkbox" id="1-J" name="1-J">
+			<label for="html">발열 및 오한 </label><br>
+			<input type="checkbox" id="1-K" name="1-K">
+			<label for="html">복통 및 구토 </label><br>
+			<input type="checkbox" id="1-N" name="1-N">
+			<label for="html">호흡곤란 </label><br>
+			<input type="checkbox" id="1-G" name="1-G">
+			<label for="html">생리불순 및 하혈 </label><br>
+			<input type="checkbox" id="1-M" name="1-M">
+			<label for="html">심근염 및 심낭염 </label><br>
+			<input type="checkbox" id="##" name="##" >
+			<label for="email">기타</label>
+    		<input type="text" placeholder="그 외의 부작용" name="email" id="email" required>
+		</form>
+
+
+		<head>
+		<style>
+		.button {
+	 	border: none;
+	 	color: white;
+	 	padding: 12px 28px;
+	 	text-align: center;
+	 	text-decoration: none;
+	 	display: inline-block;
+	 	font-size: 18px;
+	 	margin: 4px 2px;
+	 	transition-duration: 0.4s;
+	 	cursor: pointer;
+		}
+
+		.button1 {
+	 	background-color: green; 
+	 	color: white; 
+	  	border: 4px solid #4CAF50;
+		}
+
+		.button1:hover {
+	 	background-color: #4CAF50;
+	  	color: white;
+		}
+
+		</style>
+		</head>
+		<body>
+			<p>&nbsp;&nbsp;</p>
+			<button class="button button1">제 출</button>
+
+		</main>
+		</body>
+		</html>

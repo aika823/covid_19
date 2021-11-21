@@ -1,0 +1,213 @@
+﻿{% extends 'base.html' %}
+
+{% block extraheads %}
+<style>
+    .button {
+        border: none;
+        color: white;
+        padding: 12px 28px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .button1 {
+        background-color: green;
+        color: white;
+        border: 4px solid #4caf50;
+    }
+
+    .button1:hover {
+        background-color: #4caf50;
+        color: white;
+    }
+</style>
+{% endblock %}
+
+{% block contents %}
+
+<div class="covid-left"></div>
+<main>
+<div class="content">
+    <div class="survey-header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="">
+                <h1>코로나 백신 접종 후 부작용 설문조사</h1>
+                <h4>'*'는 필수항목 입니다.</h4>
+            </div>
+        </nav>
+    </div>
+
+    <form action="/create/" method='post'>
+
+        {% csrf_token %}
+
+        <!-- 성별 -->
+        <div class="form-row">
+            <h3 class='form-title'>성별* </h3>
+            <div class="box-wrap">
+                <div id="ck-button">
+                    <label>
+                        <input type="radio" name="gender" value="M" checked><span>남자</span>
+                    </label>
+                </div>
+                <div id="ck-button">
+                    <label>
+                        <input type="radio" name="gender" value="F" checked><span>여자</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- 연령대 -->
+        <div class="form-row">
+            <h3 class='form-title'>연령대* </h3>
+            <div id="ck-button">
+                <label>
+                    <input type="radio" name="age" value="10~20" checked><span>10~20대</span>
+                </label>
+            </div>
+            <div id="ck-button">
+                <label>
+                    <input type="radio" name="age" value="30~40" checked><span>30~40대</span>
+                </label>
+            </div>
+            <div id="ck-button">
+                <label>
+                    <input type="radio" name="age" value="50~60" checked><span>50~60대</span>
+                </label>
+            </div>
+            <div id="ck-button">
+                <label>
+                    <input type="radio" name="age" value="70~" checked><span>70이상</span>
+                </label>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- 기저질환 -->
+        <div class="form-row">
+            <h3 class='form-title'>기저질환이 있습니까?*</h3>
+            <div class="box-wrap">
+                <div id="ck-button">
+                    <label>
+                        <input type="radio" name="underlying" value="true" checked><span>있다.</span>
+                    </label>
+                </div>
+                <div id="ck-button">
+                    <label>
+                        <input type="radio" name="underlying" value="false" checked><span>없다.</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- 1차접종 백신 -->
+        <div class="form-row">
+            <h3 class='form-title'>4. 1차 접종 백신 종류* </h3>
+            <div id="ck-button">
+                <label>
+                    <input type="radio" name="vaccine_name_1" value="Moderna" checked><span>모더나</span>
+                </label>
+            </div>
+            <div id="ck-button">
+                <label>
+                    <input type="radio" name="vaccine_name_1" value="pfizer" checked><span>화이자</span>
+                </label>
+            </div>
+            <div id="ck-button">
+                <label>
+                    <input type="radio" name="vaccine_name_1" value="AstraZeneca" checked><span>아스트라제네카</span>
+                </label>
+            </div>
+            <div id="ck-button">
+                <label>
+                    <input type="radio" name="vaccine_name_1" value="Janssen" checked><span>얀센</span>
+                </label>
+            </div>
+            <div id="ck-button">
+                <label>
+                    <input type="radio" name="vaccine_name_1" value="etc" checked><span>기타</span>
+                </label>
+            </div>
+            <input type="text" name="vaccine_name_1_etc" placeholder="직접 입력" /><br>
+        </div>
+
+        <!-- 2차접종 백신 -->
+        <div class="form-row">
+            <h3 class='form-title'>5. 2차 접종 백신 종류* </h3>
+            <div id="ck-button">
+                <label>
+                    <input type="radio" name="vaccine_name_2" value="Moderna" checked><span>모더나</span>
+                </label>
+            </div>
+            <div id="ck-button">
+                <label>
+                    <input type="radio" name="vaccine_name_2" value="pfizer" checked><span>화이자</span>
+                </label>
+            </div>
+            <div id="ck-button">
+                <label>
+                    <input type="radio" name="vaccine_name_2" value="AstraZeneca" checked><span>아스트라제네카</span>
+                </label>
+            </div>
+            <div id="ck-button">
+                <label>
+                    <input type="radio" name="vaccine_name_2" value="Janssen" checked><span>얀센</span>
+                </label>
+            </div>
+            <div id="ck-button">
+                <label>
+                    <input type="radio" name="vaccine_name_2" value="etc" checked><span>기타</span>
+                </label>
+            </div>
+            <input type="text" name="vaccine_name_2_etc" placeholder="직접 입력" /><br>
+        </div>
+
+        <!-- 1차접종 부작용 -->
+        <div class="form-row">
+            <h3 class='form-title'>1차접종 후 부작용</h3>
+            <h5>겪은 부작용을 체크해주세요. 기타에는 방광염, 실신, 심장 두근거림 등의 증상이나 또 다른 증상을 겪으신분들은 자세히 서술해주시면 감사하겠습니다.</h5>
+
+            {% for side_effect in side_effect_list %}
+            <div id="ck-button" class="side-effect">
+                <label>
+                    <input type="checkbox" name="side_effect_1[]"
+                        value="{{ side_effect.id }}"><span>{{side_effect.side_effect_name}}</span>
+                </label>
+            </div>
+            {% endfor %}
+            <input type="text" name="side_effect_1_etc" class="side-effect-etc" placeholder="그 외의 부작용" /><br>
+        </div>
+
+        <!-- 2차접종 부작용 -->
+        <div class="form-row">
+            <h3 class='form-title'>2차접종 후 부작용</h3>
+            <h5>겪은 부작용을 체크해주세요. 기타에는 방광염, 실신, 심장 두근거림 등의 증상이나 또 다른 증상을 겪으신분들은 자세히 서술해주시면 감사하겠습니다.</h5>
+
+            {% for side_effect in side_effect_list %}
+            <div id="ck-button" class="side-effect">
+                <label>
+                    <input type="checkbox" name="side_effect_2[]"
+                        value="{{ side_effect.id }}"><span>{{side_effect.side_effect_name}}</span>
+                </label>
+            </div>
+            {% endfor %}
+            <input type="text" name="side_effect_2_etc" class="side-effect-etc" placeholder="그 외의 부작용" /><br>
+
+        </div>
+
+        <!-- 제출 버튼 -->
+        <input type="submit" value="조회" class="btn-submit">
+        <br><br><br><br><br>
+    </form>
+</div>
+</main>
+{%endblock%}

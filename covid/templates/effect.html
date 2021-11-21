@@ -1,0 +1,135 @@
+﻿{% extends 'base.html' %} 
+
+{%block contents%}
+
+<meta id="Data" data-side_effect_status="{{side_effect_status}}">
+
+<div>
+    <div class="bodyLine" style="padding-top: 50px">
+        <div>
+            
+            
+            <form action="" method='get'>
+
+                {# {% csrf_token %} #}
+
+                <!-- 성별 -->
+                <div class="form-row">
+                    <h3 class='form-title'>성별* </h3>
+                    <div class="box-wrap">
+                        <div id="ck-button">
+                            <label>
+                                <input type="checkbox" name="gender[]" value="M" {{ checked.gender.M }}><span>남자</span>
+                            </label>
+                        </div>
+                        <div id="ck-button">
+                            <label>
+                                <input type="checkbox" name="gender[]" value="F" {{ checked.gender.F }}><span>여자</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 연령대 -->
+                <div class="form-row">
+                    <h3 class='form-title'>연령대* </h3>
+                    <div id="ck-button">
+                        <label>
+                            <input type="checkbox" name="age[]" value="10~20" {{ checked.age.10 }}><span>10~20대</span>
+                        </label>
+                    </div>
+                    <div id="ck-button">
+                        <label>
+                            <input type="checkbox" name="age[]" value="30~40" {{ checked.age.30 }}><span>30~40대</span>
+                        </label>
+                    </div>
+                    <div id="ck-button">
+                        <label>
+                            <input type="checkbox" name="age[]" value="50~60" {{ checked.age.50 }}><span>50~60대</span>
+                        </label>
+                    </div>
+                    <div id="ck-button">
+                        <label>
+                            <input type="checkbox" name="age[]" value="70~" {{ checked.age.70 }}><span>70이상</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 기저질환 -->
+                <div class="form-row">
+                    <h3 class='form-title'>기저질환이 있습니까?*</h3>
+                    <div class="box-wrap">
+                        <div id="ck-button">
+                            <label>
+                                <input type="checkbox" name="underlying[]" value="true" {{ checked.underlying.t }}><span>있다.</span>
+                            </label>
+                        </div>
+                        <div id="ck-button">
+                            <label>
+                                <input type="checkbox" name="underlying[]" value="false" {{ checked.underlying.f }}><span>없다.</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1차접종 백신 -->
+                <div class="form-row">
+                    <h3 class='form-title'>4. 접종 백신 종류* </h3>
+                    <div id="ck-button">
+                        <label>
+                            <input type="checkbox" name="vaccine_name[]" value="모더나" {{ checked.vaccine.모더나 }}><span>모더나</span>
+                        </label>
+                    </div>
+                    <div id="ck-button">
+                        <label>
+                            <input type="checkbox" name="vaccine_name[]" value="화이자" {{ checked.vaccine.화이자 }}><span>화이자</span>
+                        </label>
+                    </div>
+                    <div id="ck-button">
+                        <label>
+                            <input type="checkbox" name="vaccine_name[]" value="아스트라제네카" {{ checked.vaccine.아스트라제네카 }}><span>아스트라제네카</span>
+                        </label>
+                    </div>
+                    <div id="ck-button">
+                        <label>
+                            <input type="checkbox" name="vaccine_name[]" value="얀센" {{ checked.vaccine.얀센 }}><span>얀센</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 제출 버튼 -->
+                <input type="submit" value="조회" class="btn-submit">
+                <br><br><br><br><br>
+            </form>
+
+        </div>
+        <div class="chartWrapper3">
+            <canvas id="chart2" style="width: 90%"></canvas>
+        </div>
+    </div>
+    <div class="bodyLine">
+        <div class="chartWrapper3 chart1-wrap">
+            <div class="chart1-wrap-left">
+            <canvas id="chart1"></canvas>
+            </div>
+            <div class="help">
+                <table id="table1">
+                    <tr>
+                        <td><input type="checkbox" onchange="change(event, -1, 0)" checked/></td>
+                        <td>응답</td>
+                        <td style="text-align: right">응답수</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="chartWrapper3">
+            <canvas id="chart3" style="width: 90%" width="756"></canvas>
+        </div>
+    </div>
+</div>
+{%endblock%} 
+
+{%block extrascripts%}
+<script src="/static/js/effect.js"></script>
+{%endblock%}
